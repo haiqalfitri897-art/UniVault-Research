@@ -9,9 +9,6 @@
     }
   ],
   "env": {
-    "VITE_API_URL": {
-      "description": "Backend API URL",
-      "example": "https://your-backend-url.railway.app/api"
-    }
+    "VITE_API_URL": "https://api.railway.app"
   }
 }
