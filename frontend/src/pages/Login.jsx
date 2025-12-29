@@ -10,7 +10,7 @@ export default function Login() {
   const [error, setError] = createSignal('');
   const [loading, setLoading] = createSignal(false);
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, loginAsGuest } = useAuth();
   const { post } = useAPI();
 
   const handleSubmit = async (e) => {
@@ -31,6 +31,11 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGuestAccess = () => {
+    loginAsGuest();
+    navigate('/', { replace: true });
   };
 
   return (
@@ -72,6 +77,14 @@ export default function Login() {
             {loading() ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
+
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+
+        <button type="button" class="btn btn-secondary" onClick={handleGuestAccess}>
+          Continue as Guest
+        </button>
 
         <p class="auth-footer">
           Don't have an account?{' '}

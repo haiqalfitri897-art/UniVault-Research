@@ -36,10 +36,55 @@
   margin-bottom: 1.5rem;
 }
 
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.auth-divider span {
+  padding: 0 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .auth-footer {
   text-align: center;
   font-size: 0.875rem;
   color: var(--text-secondary);
+  margin-top: 1.5rem;
 }
 
 .auth-footer a {
