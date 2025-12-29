@@ -9,6 +9,6 @@
     }
   ],
   "env": {
-    "VITE_API_URL": "https://api.railway.app"
+    "VITE_API_URL": "https://univault-research-production.up.railway.app"
   }
 }
