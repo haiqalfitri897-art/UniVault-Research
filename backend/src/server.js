@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import dashboardRoutes from './routes/dashboard.js';
+import researchRoutes from './routes/research.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/research', researchRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

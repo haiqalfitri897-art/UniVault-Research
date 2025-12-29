@@ -32,5 +32,23 @@ export function useAPI(token) {
     }
   };
 
-  return { post, get, client };
+  const put = async (url, data) => {
+    try {
+      const response = await client.put(url, data);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || { error: 'An error occurred' };
+    }
+  };
+
+  const delete_ = async (url) => {
+    try {
+      const response = await client.delete(url);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || { error: 'An error occurred' };
+    }
+  };
+
+  return { post, get, put, delete: delete_, client };
 }
