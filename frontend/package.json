@@ -14,8 +14,8 @@
     "axios": "^1.6.0"
   },
   "devDependencies": {
-    "vite": "^4.5.0",
-    "vite-plugin-solid": "1.7.3",
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.10.2",
     "solid-js": "^1.8.0"
   }
 }
