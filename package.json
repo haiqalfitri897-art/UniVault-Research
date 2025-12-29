@@ -1,0 +1,10 @@
+{
+  "name": "univault-research-root",
+  "version": "1.0.0",
+  "description": "Root package.json to ensure Railway finds a start script",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node backend/src/server.js"
+  }
+}

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files (don't copy secrets)
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Development files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Docker
+docker-compose.yml
+Dockerfile.dev
+.docker/
+
+# Documentation
+README.md
+*.md
+LICENSE
+
+# Tests
+.test/
+__tests__/
+
+# Frontend (not needed for backend build)
+frontend/

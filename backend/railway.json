@@ -1,0 +1,14 @@
+# Railway Dockerfile - already at backend/Dockerfile
+# This file shows the production build strategy
+
+# For Heroku, Render, or Railway:
+# 1. Connect GitHub repository
+# 2. Set environment variables
+# 3. Auto-deploy on push
+
+# Environment Variables for Backend:
+# NODE_ENV=production
+# JWT_SECRET=your_random_secret
+# FRONTEND_URL=your_frontend_url
+
+# The backend/Dockerfile handles the build automatically

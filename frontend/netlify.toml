@@ -1,0 +1,21 @@
+[build][
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VITE_API_URL = "https://your-backend-url.railway.app/api"[context.production.environment]NODE_VERSION = "18.0.0"[build.environment]status = 200to = "/index.html"from = "/*"[[redirects]]publish = "dist"functions = "functions"command = "npm run build"  {
+    "source": "/(.*)",
+    "destination": "/index.html"
+  }
+]

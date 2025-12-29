@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": {
+      "description": "Backend API URL",
+      "example": "https://your-backend-url.railway.app/api"
+    }
+  }
+}
