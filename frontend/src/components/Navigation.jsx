@@ -1,4 +1,4 @@
-import { useNavigate } from 'solid-router';
+import { useNavigate } from '@solidjs/router';
 import { useAuth } from '../hooks/useAuth';
 import '../styles/navigation.css';
 
