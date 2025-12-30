@@ -12,6 +12,18 @@ export const authOptions = {
   session: {
     strategy: 'jwt',
   },
+  cookies: {
+    sessionToken: {
+      name: '__Secure-next-auth.session-token',
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: true,
+        path: '/',
+        domain: '.vercel.app',
+      },
+    },
+  },
   callbacks: {
     // Ensure redirect honors callbackUrl passed from the Vite app
     async redirect({ url, baseUrl }) {
