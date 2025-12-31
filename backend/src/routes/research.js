@@ -10,13 +10,13 @@ import { verifyToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
-// All research routes require authentication
-router.use(verifyToken);
-
+// Public routes
 router.get('/', getAllResearch);
-router.post('/', createResearch);
 router.get('/:id', getResearchById);
-router.put('/:id', updateResearch);
-router.delete('/:id', deleteResearch);
+
+// Protected routes
+router.post('/', verifyToken, createResearch);
+router.put('/:id', verifyToken, updateResearch);
+router.delete('/:id', verifyToken, deleteResearch);
 
 export default router;

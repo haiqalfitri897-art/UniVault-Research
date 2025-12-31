@@ -56,6 +56,23 @@
   font-size: 0.875rem;
 }
 
+.btn-google {
+  background: #4285f4;
+  color: white;
+  border: none;
+}
+
+.btn-google:hover {
+  background: #357ae8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
 .btn-secondary {
   display: block;
   width: 100%;

@@ -1,8 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-
-// In-memory user database (replace with real database in production)
-const users = new Map();
+import { users } from '../data/store.js';
 
 export const register = async (req, res) => {
   try {
