@@ -14,9 +14,8 @@ const PORT = process.env.PORT || 8080;
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://univault-research-production.up.railway.app',
-  'https://uni-vault-research.vercel.app',
   'https://univault-research.vercel.app',
+  'https://univault-research-production.up.railway.app',
 ];
 
 app.use(cors({
@@ -24,10 +23,12 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('CORS not allowed'));
+      callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.use(express.json());
