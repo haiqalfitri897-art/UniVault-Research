@@ -16,6 +16,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://univault-research.vercel.app',
   'https://univault-research-production.up.railway.app',
+  'https://uni-vault-research-cphu0ffm7-haiqals-projects-f292bd23.vercel.app',
 ];
 
 app.use(cors({
