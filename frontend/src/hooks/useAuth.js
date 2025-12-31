@@ -1,4 +1,4 @@
-import { createSignal, createEffect } from 'solid-js';
+import { createSignal, onMount } from 'solid-js';
 
 const AUTH_TOKEN_KEY = 'auth_token';
 const USER_KEY = 'user';
@@ -8,7 +8,13 @@ export function useAuth() {
   const [user, setUser] = createSignal(null);
   const [loading, setLoading] = createSignal(true);
 
-  createEffect(() => {
+  // Initialize auth state on mount
+  onMount(() => {
+    checkAuthState();
+    setLoading(false);
+  });
+
+  const checkAuthState = () => {
     // Check for existing token
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     if (token) {
@@ -27,8 +33,7 @@ export function useAuth() {
         }
       }
     }
-    setLoading(false);
-  });
+  };
 
   const login = (token, userData) => {
     localStorage.setItem(AUTH_TOKEN_KEY, token);
@@ -37,7 +42,7 @@ export function useAuth() {
   };
 
   const loginAsGuest = () => {
-    const guestUser = { role: 'guest' };
+    const guestUser = { role: 'guest', name: 'Guest User' };
     localStorage.setItem(USER_KEY, JSON.stringify(guestUser));
     setUser(guestUser);
     setIsAuthenticated(true);

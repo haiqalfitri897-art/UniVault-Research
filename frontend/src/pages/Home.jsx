@@ -1,6 +1,7 @@
 import { createSignal, Show } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 import { useAuth } from '../hooks/useAuth';
+import GlobalMap from '../components/GlobalMap';
 import '../styles/home.css';
 
 export default function Home() {
@@ -42,6 +43,14 @@ export default function Home() {
 
   return (
     <div class="home-container">
+      <Show when={isAuthenticated()}>
+        <div class="section-container" style={{ "margin-bottom": "40px", "padding": "20px" }}>
+            <h2>Global Research Map</h2>
+            <p>Select a region to explore research hubs. Currently active: Malaysia.</p>
+            <GlobalMap />
+        </div>
+      </Show>
+
       {/* Hero Section */}
       <section class="hero-section">
         <div class="hero-content">

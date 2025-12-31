@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import dashboardRoutes from './routes/dashboard.js';
 import researchRoutes from './routes/research.js';
+import institutionRoutes from './routes/institution.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -17,6 +18,7 @@ const allowedOrigins = [
   'https://univault-research.vercel.app',
   'https://univault-research-production.up.railway.app',
   'https://uni-vault-research-cphu0ffm7-haiqals-projects-f292bd23.vercel.app',
+  'https://uni-vault-research-amn86cjqj-haiqals-projects-f292bd23.vercel.app',
 ];
 
 app.use(cors({
@@ -39,6 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/research', researchRoutes);
+app.use('/api/institutions', institutionRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

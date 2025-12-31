@@ -4,6 +4,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import MalaysiaHub from './pages/MalaysiaHub';
+import UniversityProfile from './pages/UniversityProfile';
+import ResearchDetail from './pages/ResearchDetail';
 import Navigation from './components/Navigation';
 import { useAuth } from './hooks/useAuth';
 
@@ -21,6 +24,9 @@ export default function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/malaysia-hub" component={MalaysiaHub} />
+          <Route path="/institution/:id" component={UniversityProfile} />
+          <Route path="/research/:id" component={ResearchDetail} />
           <Route path="*" component={() => <Navigate href="/" />} />
         </Router>
       </div>
