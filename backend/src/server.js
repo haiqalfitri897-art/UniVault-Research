@@ -9,14 +9,14 @@ import { errorHandler } from './middleware/errorHandler.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
+  'https://univault-research-production.up.railway.app',
   'https://uni-vault-research.vercel.app',
-  'https://uni-vault-research-production.up.railway.app',
-  'https://uni-vault-research-ffm361dsz-haiqals-projects-f292bd23.vercel.app',
+  'https://univault-research.vercel.app',
 ];
 
 app.use(cors({
@@ -24,7 +24,7 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error('CORS not allowed'));
     }
   },
   credentials: true,
